@@ -23,6 +23,10 @@ import styled from 'styled-components';
 
 import geolocationinactive from '../../../../assets/geolocationinactive.svg';
 import gpstarget from '../../../../assets/gpstarget.svg';
+import TitleWithAddon from "../../../../components/TitleWithAddon/TitleWithAddon";
+import chrome from 'src/assets/chrome.png';
+import firefox from 'src/assets/firefox.png';
+import safari from 'src/assets/safari.png';
 
 const { Text } = Typography;
 
@@ -644,8 +648,40 @@ const PersonalDataForm: React.FC<PersonalDataFormProps> = ({
         )}
         {instructionsVisible && (
           <>
-            <h4>{t('user_data_form.instructions_modal_title')}</h4>
-            <p>{t('user_data_form.instructions_modal_text')}</p>
+            <TitleWithAddon alignAddon="left" level={2}>
+              {t('user_data_form.instructions_modal_title')}
+            </TitleWithAddon>
+            <p>
+              <div>Google Chrome</div>
+              <img src={chrome} alt="Google Chrome instructions" />
+              <ul>
+                  <li>Settings</li>
+                  <li>
+                      <ul>
+                          <li>Privacy and Security</li>
+                      </ul>
+                  </li>
+              </ul>
+            </p>
+            <p>
+              <div>Firefox</div>
+              <img src={firefox} alt="Firefox instructions" />
+              <ul>
+                <li>Settings</li>
+                <li>
+                  <ul>
+                     <li>Privacy and Security</li>
+                  </ul>
+                </li>
+              </ul>
+            </p>
+            <p>
+              <div>Safari</div>
+              <img src={safari} alt="Safari instructions" />
+              <ul>
+                <li>Settings</li>
+              </ul>
+            </p>
           </>
         )}
       </Modal>
